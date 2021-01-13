@@ -6,8 +6,12 @@ public class NaviCursor : MonoBehaviour
 {
     public GameObject towerMenuDealer;
     public GameObject towerAddingPanel;
-    public GameObject player;
 
+    public Material highlightedColor;
+    public Material normalColor;
+
+    private Renderer lastTowerPoint;
+    private Renderer selection;
     bool eMenu=false;
     bool pMenu=false;
 
@@ -23,7 +27,6 @@ public class NaviCursor : MonoBehaviour
         towerAddingPanel.SetActive(false);
         pMenu = false;
         Time.timeScale = 1f;
-        player.GetComponent<Control>().enabled = true;
         Cursor.visible = false;
     }
 
@@ -32,7 +35,6 @@ public class NaviCursor : MonoBehaviour
         towerAddingPanel.SetActive(false);
         pMenu = false;
         Time.timeScale = 1f;
-        player.GetComponent<Control>().enabled = true;
         Cursor.visible = false;
     }
 
@@ -41,18 +43,19 @@ public class NaviCursor : MonoBehaviour
     {
         RaycastHit hit;
         Physics.Raycast(cursor.transform.position, cursor.transform.forward, out hit, 5);
-        var whatBeenHit = hit.transform.gameObject.GetComponent<EmptyForCursor>();
+        var whatBeenHit = hit.transform;
+        var isTowerPoint=whatBeenHit.gameObject.GetComponent<EmptyForCursor>();
+        var whatRendererHit = whatBeenHit.GetComponent<Renderer>();
 
-
-
-
-        if (whatBeenHit != null && pMenu == false)
+        if (isTowerPoint != null && pMenu == false)
         {
             towerMenuDealer.SetActive(true);
             eMenu = true;
+            whatRendererHit.material = highlightedColor;
+            selection = whatRendererHit;
+
             if (Input.GetKeyDown(KeyCode.E) && eMenu == true)
             {
-                player.GetComponent<Control>().enabled = false;
                 Cursor.visible = true;
                 towerMenuDealer.SetActive(false);
                 eMenu = false;
@@ -63,10 +66,11 @@ public class NaviCursor : MonoBehaviour
             }
             
         }
-        if (whatBeenHit == null)
+        if (isTowerPoint == null)
         {
             towerMenuDealer.SetActive(false);
             eMenu = false;
+            selection.material = normalColor;
         }
 
     }

@@ -47,7 +47,7 @@ public class Control : MonoBehaviour
         {
             if (Input.GetKeyDown("space"))
             {
-                jumpV = Vector3.up * 4;
+                jumpV = Vector3.up * 5f;
             }
             else
             {
