@@ -9,6 +9,6 @@ public class Lives : MonoBehaviour
 
     private void Update()
     {
-        LivesText.text = "Lives : " + (EnemyOnEndPoint.Lives).ToString();
+        LivesText.text = "Lives : " + (EndPoint.Lives).ToString();
     }
 }

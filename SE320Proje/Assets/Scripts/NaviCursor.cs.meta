@@ -1,0 +1,20 @@
+fileFormatVersion: 2
+guid: d3d988967e6fde94586beccf6ade4542
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - towerMenuDealer: {instanceID: 0}
+  - towerAddingPanel: {instanceID: 0}
+  - highlightedColor: {instanceID: 0}
+  - normalColor: {instanceID: 0}
+  - tower1: {fileID: 7708956692461282688, guid: d37a66e5d654ca8409d9574cc0693219,
+      type: 3}
+  - towerPanel: {fileID: 1051046357521735270, guid: b6c8ef6bcc44eb94e982290985f02e80,
+      type: 3}
+  - cursor: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
