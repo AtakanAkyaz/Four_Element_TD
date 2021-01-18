@@ -14,7 +14,7 @@ public class EnemyOnEndPoint : MonoBehaviour
     {
         if(collision.gameObject.tag.Equals("EndPoint")){
             Destroy(gameObject);
-            EndPoint.Lives--;
+            Lives.life--;
         }
 
         

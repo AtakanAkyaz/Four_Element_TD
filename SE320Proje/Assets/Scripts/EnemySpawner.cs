@@ -5,18 +5,18 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    public int WaveCounter;
+    public int WaveCounter = 5;
     private float WaveTime = 0f;
     public Transform SpawnPoint;
     public GameObject WhichEnemyWillSpawned;
 
     private void Update()
     {
-        if (WaveTime >= 10f && WaveCounter <= 1)
+        if (WaveTime >= 15f && WaveCounter != 0)
         {
             StartCoroutine(SpawnEnemies());
             WaveTime = 0f;
-            WaveCounter++;
+            WaveCounter--;
         }
 
         WaveTime += Time.deltaTime;

@@ -3,14 +3,17 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using Random = System.Random;
 
 public class Enemy : MonoBehaviour
 {
 
     public int health = 100;
-    public int damage = 30;
+    
+    
     public void Update()
     {
+        
         if (health <= 0)
         {
             Destroy(gameObject);
@@ -23,7 +26,9 @@ public class Enemy : MonoBehaviour
     {
        if(collusion.gameObject.tag.Equals("Bullet"))
        {
-           health -= 30;
+           Random random = new Random();
+           int Bullet1Damage = random.Next(23, 33);
+           health -= Bullet1Damage;
        }
     }
 }

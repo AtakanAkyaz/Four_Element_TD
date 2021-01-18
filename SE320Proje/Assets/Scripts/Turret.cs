@@ -5,11 +5,12 @@ using UnityEngine;
 
 public class Turret : MonoBehaviour
 {
-    public Transform target;
-    public float range = 15f;
+    
+    public float range = 12f;
     public float fireTime = 0f;
     public GameObject shootingObject;
     public Transform gunPoint;
+    public Transform target;
 
 
     private void Start()

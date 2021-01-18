@@ -7,7 +7,7 @@ public class Bullet : MonoBehaviour
 {
     public Transform target;
     float speed = 10f;
-    
+
     // Update is called once per frame
     void Update()
     {
@@ -15,18 +15,14 @@ public class Bullet : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
         Vector3 dir = target.position - transform.position;
         float bulletSpeed = speed * Time.deltaTime;
-
         transform.Translate(dir.normalized * bulletSpeed, Space.World);
-        
-
     }
-    
+
     public void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag.Equals("Enemy"))
+        if (collision.gameObject.tag.Equals("Enemy"))
         {
             Destroy(gameObject);
         }
@@ -36,8 +32,4 @@ public class Bullet : MonoBehaviour
     {
         target = exactTarget;
     }
-
-    
-
-   
 }

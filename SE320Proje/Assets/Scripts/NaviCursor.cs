@@ -38,7 +38,7 @@ public class NaviCursor : MonoBehaviour
         pMenu = false;
         Time.timeScale = 1f;
         Cursor.visible = false;
-       towerPointObject.SetActive(false); //gbgggggggggggggggggggggggggggggggg
+       towerPointObject.SetActive(false); 
     }
 
     public void button2Click()
