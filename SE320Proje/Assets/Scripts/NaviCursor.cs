@@ -16,8 +16,8 @@ public class NaviCursor : MonoBehaviour
     bool pMenu=false;
 
     public GameObject tower1;
-    public Transform towerPoint;
-    public GameObject towerPointObject;
+    private Transform towerPoint;
+    private GameObject towerPointObject;
    // Yeni bir script oluştur  panellerin hepsine ver bool olsun burda onu değiştir daha sonra diğer script te true/false kontrolü yap 
     public Transform cursor;
     // Start is called before the first frame update
@@ -32,13 +32,13 @@ public class NaviCursor : MonoBehaviour
         {
             Instantiate(tower1, towerPoint.position , towerPoint.rotation);
             Money.money -= 200;
+            towerPointObject.SetActive(false);
         }
         
         towerAddingPanel.SetActive(false);
         pMenu = false;
         Time.timeScale = 1f;
         Cursor.visible = false;
-       towerPointObject.SetActive(false); 
     }
 
     public void button2Click()

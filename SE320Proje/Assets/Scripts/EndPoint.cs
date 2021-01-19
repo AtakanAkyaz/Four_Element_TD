@@ -15,6 +15,8 @@ public class EndPoint : MonoBehaviour
         {
             Debug.Log("Oyun bitti");
             GameOver.SetActive(true);
+            Time.timeScale = 0f;
+            Cursor.visible = true;
         }
     }
 }

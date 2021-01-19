@@ -6,8 +6,10 @@ public class Control : MonoBehaviour
 {
     public CharacterController controller;
     public Transform ccamera;
+    public Transform spawnPoint;
 
     public float speed = 6f;
+    private Vector3 newDirection;
 
     public float turnSmoothTime = .1f;
     float turnSmoothVelocity;
@@ -27,19 +29,21 @@ public class Control : MonoBehaviour
     {
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
-        Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
-        if (direction.magnitude >= .1f)
-        {
-            float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + ccamera.eulerAngles.y;
-            //getting angle
-            float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
-            transform.rotation = Quaternion.Euler(0f, angle, 0f);
-           
-            Vector3 moveDirection = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
-            //facing forward
-            controller.Move((moveDirection.normalized+gravityV+jumpV) * speed * Time.deltaTime);
 
+        Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
+        float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + ccamera.eulerAngles.y;
+        float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
+        transform.rotation = Quaternion.Euler(0f, angle, 0f);
+        if (direction.magnitude >= 0.01f)
+        {
+            newDirection = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
         }
+        else
+        {
+            newDirection = Vector3.zero;
+        }
+        
+        
         
         gravityV.y += gravity * Time.deltaTime;
 
@@ -47,7 +51,7 @@ public class Control : MonoBehaviour
         {
             if (Input.GetKeyDown("space"))
             {
-                jumpV = Vector3.up * 5f;
+                jumpV = Vector3.up * 8f;
             }
             else
             {
@@ -57,7 +61,22 @@ public class Control : MonoBehaviour
             gravityV.y = -2f;
         }
 
-        controller.Move((gravityV + jumpV) * speed * Time.deltaTime);
+
+
+        if (GameObject.Find("Canvas").GetComponent<Mapping>().mapActive == true)
+        {
+            controller.Move((direction * speed + gravityV + jumpV) * Time.deltaTime);
+        }
+
+        if (GameObject.Find("Canvas").GetComponent<Mapping>().mapActive == false)
+        {
+            controller.Move((newDirection * speed + gravityV + jumpV) * Time.deltaTime);
+        }
+
+        if (transform.position.y < -5)
+        {
+            transform.position = spawnPoint.position;
+        }
 
 
     }
