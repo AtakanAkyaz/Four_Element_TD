@@ -51,14 +51,14 @@ public class Control : MonoBehaviour
         {
             if (Input.GetKeyDown("space"))
             {
-                jumpV = Vector3.up * 8f;
+                jumpV = Vector3.up * 5f;
             }
             else
             {
                 jumpV = Vector3.zero;
             }
 
-            gravityV.y = -2f;
+            gravityV.y = -1f;
         }
 
 

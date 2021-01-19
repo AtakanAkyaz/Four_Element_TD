@@ -15,17 +15,29 @@ public class Mapping : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.M))
+
+
+        if (Input.GetKeyDown(KeyCode.M))
         {
-            tpsCamera.SetActive(false);
-            mapCamera2.SetActive(true);
-            mapActive = true;
+            if (!mapActive)
+            {
+                tpsCamera.SetActive(false);
+                mapCamera2.SetActive(true);
+                mapActive = true;
+            }
+
+            else
+            {
+                tpsCamera.SetActive(true);
+                mapCamera2.SetActive(false);
+                mapActive = false;
+            }
         }
-        else
-        {
-            tpsCamera.SetActive(true);
-            mapCamera2.SetActive(false);
-            mapActive = false;
-        }
+
+        
+
+        
+
+
     }
 }
