@@ -76,6 +76,7 @@ public class Control : MonoBehaviour
         if (transform.position.y < -5)
         {
             transform.position = spawnPoint.position;
+            Lives.life--;
         }
 
 

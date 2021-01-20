@@ -13,7 +13,7 @@ public class NaviCursor : MonoBehaviour
     private Renderer lastTowerPoint;
     private Renderer selection;
     bool eMenu=false;
-    bool pMenu=false;
+    static public bool pMenu=false;
 
     public GameObject tower1;
     private Transform towerPoint;
