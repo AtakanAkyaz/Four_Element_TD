@@ -10,20 +10,18 @@ public class NaviCursor : MonoBehaviour
     public Material highlightedColor;
     public Material normalColor;
 
-    private Renderer lastTowerPoint;
     private Renderer selection;
     bool eMenu=false;
-    static public bool pMenu=false;
+    static public bool pMenu;
 
     public GameObject tower1;
     private Transform towerPoint;
     private GameObject towerPointObject;
-   // Yeni bir script oluştur  panellerin hepsine ver bool olsun burda onu değiştir daha sonra diğer script te true/false kontrolü yap 
     public Transform cursor;
-    // Start is called before the first frame update
+   
     void Start()
     {
-        
+        pMenu = false;
     }
    
     public void button1Click()
@@ -32,7 +30,7 @@ public class NaviCursor : MonoBehaviour
         {
             Instantiate(tower1, towerPoint.position , towerPoint.rotation);
             Money.money -= 200;
-            towerPointObject.SetActive(false);
+            Destroy(towerPointObject);
         }
         
         towerAddingPanel.SetActive(false);
@@ -53,7 +51,11 @@ public class NaviCursor : MonoBehaviour
     void Update()
     {
         RaycastHit hit;
-        Physics.Raycast(cursor.transform.position, cursor.transform.forward, out hit, 5);
+        Physics.Raycast(cursor.transform.position, cursor.transform.forward, out hit, 2f);
+
+        Vector3 cursorForward = cursor.TransformDirection(Vector3.forward) * 2f;
+        Debug.DrawRay(cursor.transform.position, cursorForward, Color.green);
+
         var whatBeenHit = hit.transform;
         towerPoint = whatBeenHit;
         towerPointObject = whatBeenHit.gameObject;

@@ -10,11 +10,13 @@ public class PauseScreen : MonoBehaviour
 
     public void resume()
     {
-        if (NaviCursor.pMenu == false)
+        if (NaviCursor.pMenu == false && TowerCursor.sellUpgradePanelOpen == false)
         {
             Time.timeScale = 1f;
             Cursor.visible = false;
         }
+
+
         pausePanel.SetActive(false);
         pausePanelActive = false;
     }

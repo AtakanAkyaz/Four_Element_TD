@@ -138,12 +138,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90e46aa16dcd1344299aaa4756ac0333, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
   range: 15
   fireTime: 0
   shootingObject: {fileID: 7059719015679005785, guid: b185975c12c9b3b47ae8f4523a9cb42b,
     type: 3}
   gunPoint: {fileID: 1020950870}
+  target: {fileID: 0}
 --- !u!1 &3690482220094828247
 GameObject:
   m_ObjectHideFlags: 0
@@ -250,6 +250,7 @@ GameObject:
   - component: {fileID: 8872374144606618055}
   - component: {fileID: 4044960850140168395}
   - component: {fileID: 4156703583998001257}
+  - component: {fileID: -1826669069719811968}
   m_Layer: 0
   m_Name: Tower-1
   m_TagString: Untagged
@@ -332,3 +333,15 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-1826669069719811968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7708956692461282688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 229ccc4347ba90a4cb57c66ae55cdd48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
