@@ -48,9 +48,9 @@ public class TowerCursor : MonoBehaviour
     void Update()
     {
         RaycastHit hit;
-        Physics.Raycast(towerCursor.transform.position, towerCursor.transform.forward, out hit, 5);
+        Physics.Raycast(towerCursor.transform.position, towerCursor.transform.forward, out hit, 10f);
 
-        Vector3 cursorForward = towerCursor.TransformDirection(Vector3.forward) * 5f;
+        Vector3 cursorForward = towerCursor.TransformDirection(Vector3.forward) * 10f;
         Debug.DrawRay(towerCursor.transform.position, cursorForward, Color.red);
 
         var whichTowerHit = hit.transform;
