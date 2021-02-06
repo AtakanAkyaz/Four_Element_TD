@@ -1,35 +1,43 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Mapping : MonoBehaviour
 {
     public GameObject tpsCamera;
-    public GameObject mapCamera2;
+    public Camera tpsCameraC;
+    public Camera miniMapCameraC;
+    public GameObject miniMapCamera;
+    public GameObject cinemachine;
+    public Transform mapCamera2Point;
     public bool mapActive;
+    public float scaleOfMiniMap = 300f;
+    public Slider scaleOfMiniMapSlider;
     void Start()
     {
-        mapActive = false;   
+        mapActive = false;
+        miniMapCameraC.pixelRect = new Rect(0, 0, 300, 300);
     }
 
-    // Update is called once per frame
     void Update()
     {
-
-
         if (Input.GetKeyDown(KeyCode.M))
         {
             if (!mapActive)
             {
-                tpsCamera.SetActive(false);
-                mapCamera2.SetActive(true);
+                cinemachine.SetActive(false);
+                miniMapCamera.SetActive(false);
+                tpsCamera.transform.position = mapCamera2Point.position;
+                tpsCamera.transform.rotation = mapCamera2Point.rotation;
+                tpsCameraC.fieldOfView = 75f;
                 mapActive = true;
             }
 
             else
             {
-                tpsCamera.SetActive(true);
-                mapCamera2.SetActive(false);
+                cinemachine.SetActive(true);
+                miniMapCamera.SetActive(true);
                 mapActive = false;
             }
         }
