@@ -15,6 +15,6 @@ public class TowerPoint : MonoBehaviour
 
     public void asd()
     {
-        if
+
     }
 }

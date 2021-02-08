@@ -15,8 +15,6 @@ public class PauseScreen : MonoBehaviour
             Time.timeScale = 1f;
             Cursor.visible = false;
         }
-
-
         pausePanel.SetActive(false);
         pausePanelActive = false;
     }

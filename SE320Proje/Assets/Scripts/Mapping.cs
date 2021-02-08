@@ -20,6 +20,13 @@ public class Mapping : MonoBehaviour
         miniMapCameraC.pixelRect = new Rect(0, 0, 300, 300);
     }
 
+    public void miniMapUpdate()
+    {
+        scaleOfMiniMap = scaleOfMiniMapSlider.value;
+        miniMapCameraC.pixelRect = new Rect(0, 0, scaleOfMiniMap, scaleOfMiniMap);
+
+    }
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.M))

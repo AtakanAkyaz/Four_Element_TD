@@ -132,6 +132,7 @@ MonoBehaviour:
   endPoint: {fileID: 1519070740041029653, guid: 9fd16b32ea32be840a998e59476f4743,
     type: 3}
   speed: 4
+  playerHurt: {fileID: 2100000, guid: 1a1fad415e997d248a1074861d5c9835, type: 2}
 --- !u!114 &3003855859018673383
 MonoBehaviour:
   m_ObjectHideFlags: 0
