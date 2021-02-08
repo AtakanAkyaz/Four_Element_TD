@@ -5,7 +5,9 @@ using UnityEngine;
 
 public class TowerPoint : MonoBehaviour
 {
-    public GameObject towerPoint;
+    public static GameObject towerPoint;
+
+    private  Vector3 height = towerPoint.transform.position;
     private void Update()
     {  
        
@@ -13,6 +15,6 @@ public class TowerPoint : MonoBehaviour
 
     public void asd()
     {
-        
+        if
     }
 }

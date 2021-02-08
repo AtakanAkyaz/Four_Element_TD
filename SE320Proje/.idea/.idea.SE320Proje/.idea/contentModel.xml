@@ -29,17 +29,24 @@
         </e>
         <e p="Scripts" t="Include">
           <e p="Bullet.cs" t="Include" />
+          <e p="CollectibleSpawner.cs" t="Include" />
+          <e p="CollectsS.cs" t="Include" />
           <e p="Control.cs" t="Include" />
           <e p="EmptyForCursor.cs" t="Include" />
+          <e p="EmptyForTower.cs" t="Include" />
           <e p="EndPoint.cs" t="Include" />
           <e p="Enemy.cs" t="Include" />
           <e p="EnemyMove.cs" t="Include" />
           <e p="EnemyOnEndPoint.cs" t="Include" />
           <e p="EnemySpawner.cs" t="Include" />
           <e p="Lives.cs" t="Include" />
+          <e p="Mapping.cs" t="Include" />
           <e p="Money.cs" t="Include" />
           <e p="NaviCursor.cs" t="Include" />
+          <e p="PauseScreen.cs" t="Include" />
+          <e p="StartMenu.cs" t="Include" />
           <e p="Timer.cs" t="Include" />
+          <e p="TowerCursor.cs" t="Include" />
           <e p="TowerPoint.cs" t="Include" />
           <e p="Turret.cs" t="Include" />
         </e>

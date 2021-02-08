@@ -11,6 +11,7 @@ public class Turret : MonoBehaviour
     public GameObject shootingObject;
     public Transform gunPoint;
     public Transform target;
+    public  static int towerLevel = 1; 
 
 
     private void Start()
@@ -26,14 +27,33 @@ public class Turret : MonoBehaviour
         }
 
        
-        transform.LookAt(target);
-
-        if (fireTime >= 1f)
-        {
-            Fire();
-            fireTime = 0;
-        }
-
+        transform.LookAt(target); 
+        // fire spped
+if(towerLevel == 1)
+{
+    if (fireTime >= 1f)
+    {
+        Fire();
+        fireTime = 0;
+    }
+}
+if(towerLevel == 2)
+{
+    if (fireTime >= 0.8f)
+    {
+        Fire();
+        fireTime = 0;
+    }
+}
+if(towerLevel == 3)
+{
+    if (fireTime >= 0.7f)
+    {
+        Fire();
+        fireTime = 0;
+    }
+}
+        // End of fire speed
         fireTime += Time.deltaTime;
     }
 
