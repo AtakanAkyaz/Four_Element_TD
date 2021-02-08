@@ -4,13 +4,4 @@ using UnityEngine;
 
 public class EmptyForTower : MonoBehaviour
 {
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
-    }
 }

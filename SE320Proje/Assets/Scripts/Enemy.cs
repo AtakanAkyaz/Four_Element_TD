@@ -49,4 +49,6 @@ public class Enemy : MonoBehaviour
            
        }
     }
+
+    //player damaged
 }

@@ -17,7 +17,7 @@ public class Control : MonoBehaviour
     public float gravity = -9.81f;
 
     private Vector3 gravityV;
-    private Vector3 jumpV;
+    public Vector3 jumpV;
     // Start is called before the first frame update
     void Start()
     {
@@ -51,7 +51,14 @@ public class Control : MonoBehaviour
         {
             if (Input.GetKeyDown("space"))
             {
-                jumpV = Vector3.up * 5f;
+                if (transform.position.y < 1)
+                {
+                    jumpV = Vector3.up * 7f;
+                }
+                else
+                {
+                    jumpV = Vector3.up * 5f;
+                }
             }
             else
             {

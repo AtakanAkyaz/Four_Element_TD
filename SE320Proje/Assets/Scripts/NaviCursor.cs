@@ -53,8 +53,8 @@ public class NaviCursor : MonoBehaviour
         RaycastHit hit;
         Physics.Raycast(cursor.transform.position, cursor.transform.forward, out hit, 10f);
 
-        Vector3 cursorForward = cursor.TransformDirection(Vector3.forward) * 10f;
-        Debug.DrawRay(cursor.transform.position, cursorForward, Color.green);
+        //Vector3 cursorForward = cursor.TransformDirection(Vector3.forward) * 10f;
+        //Debug.DrawRay(cursor.transform.position, cursorForward, Color.green);
 
         var whatBeenHit = hit.transform;
         towerPoint = whatBeenHit;
