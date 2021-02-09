@@ -9,8 +9,13 @@ public class Enemy : MonoBehaviour
 {
 
     public int health = 100;
-    
-    
+    public float distance = 0;
+    public Vector3 pLocation;
+
+    public void Start()
+    {
+        InvokeRepeating("calculateDistance", 0f, 0.5f);
+    }
     public void Update()
     {
         
@@ -19,6 +24,8 @@ public class Enemy : MonoBehaviour
             Destroy(gameObject);
             Money.money += 50;
         }
+        
+        
     }
 
 
@@ -26,7 +33,7 @@ public class Enemy : MonoBehaviour
     {
        if(collusion.gameObject.tag.Equals("Bullet"))
        {
-           // Damage taken from tower
+           // Damage taken from turret
            if(Turret.towerLevel == 1)
            {
               Random random = new Random();
@@ -45,10 +52,16 @@ public class Enemy : MonoBehaviour
                int Bullet1Damage = random.Next(100, 101);
                health -= Bullet1Damage;
            }
-           // End of damage taken from tower
+           // End of damage taken from turret
            
        }
     }
 
     //player damaged
+
+    private void calculateDistance()
+    {
+        distance += Vector3.Distance(transform.position, pLocation);
+        pLocation = transform.position;
+    }
 }

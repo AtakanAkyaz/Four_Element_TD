@@ -16,7 +16,8 @@ GameObject:
   - component: {fileID: 3003855859018673383}
   - component: {fileID: -7490263897382821403}
   - component: {fileID: 1569973385931460071}
-  m_Layer: 0
+  - component: {fileID: 2112852339887987366}
+  m_Layer: 9
   m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -109,30 +110,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c8124e9d018f404da74f89e64f01afa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  position1: {fileID: 9141582178185733902, guid: 0d1e22a96b4ea54498e3a1704e44b641,
-    type: 3}
-  position2: {fileID: 3467926631614203524, guid: 97b6339fb9e0e6c49877a99665b626c9,
-    type: 3}
-  position3: {fileID: 4127166413631341305, guid: 7a77c12b28b580144b211637e86335f2,
-    type: 3}
-  position4: {fileID: 5716721521916231529, guid: f973bd122335400478377e63d44cd86f,
-    type: 3}
-  position5: {fileID: 1523431701064510164, guid: f504ffe4fd20afd4191adcfbf00a8b2f,
-    type: 3}
-  position6: {fileID: 3085792735439002598, guid: 14e20af4948e6104589403371ebe4d6d,
-    type: 3}
-  position7: {fileID: 874020309051456892, guid: 169335ca6d6146d4cb763fb5ea7394d9,
-    type: 3}
-  position8: {fileID: 4234753472772368966, guid: bafc0fcb8a3d3c143b1a90e2bf855fd8,
-    type: 3}
-  position9: {fileID: 3797966589606223429, guid: 6b3a76fa4bbf8864d95ab03319832798,
-    type: 3}
-  position10: {fileID: 206931719192780874, guid: 0bd8d63996ae2e5409bdae23b2814c41,
-    type: 3}
   endPoint: {fileID: 1519070740041029653, guid: 9fd16b32ea32be840a998e59476f4743,
     type: 3}
-  speed: 4
-  playerHurt: {fileID: 2100000, guid: 1a1fad415e997d248a1074861d5c9835, type: 2}
 --- !u!114 &3003855859018673383
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -174,3 +153,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+--- !u!195 &2112852339887987366
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3872351307859147916}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 1
+  m_BaseOffset: 0.5
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4

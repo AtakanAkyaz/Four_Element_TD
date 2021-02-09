@@ -6,8 +6,9 @@ using UnityEngine;
 
 public class EnemyMove : MonoBehaviour
 {
-
-    public GameObject position1;
+    private UnityEngine.AI.NavMeshAgent Internal_Nav_Mesh_Agent;
+    public GameObject endPoint;
+   /* public GameObject position1;
     public GameObject position2;
     public GameObject position3;
     public GameObject position4;
@@ -19,19 +20,20 @@ public class EnemyMove : MonoBehaviour
     public GameObject position10;
     public GameObject endPoint;
     public float speed = 5f;
-
+    
 
     bool p1 = true , p2 = true , p3 = true , p4 = true , p5 = true , p6 = true , p7 = true , p8 = true , p9 = true , p10 = true , pEnd = true;
-    // Start is called before the first frame update
+    // Start is called before the first frame update*/
     void Start()
     {
-        
+        Internal_Nav_Mesh_Agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (p1)
+        Internal_Nav_Mesh_Agent.SetDestination(endPoint.transform.position);
+        /*if (p1)
             {
                 gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position,
                     position1.GetComponent<Transform>().position, speed * Time.deltaTime);
@@ -139,6 +141,6 @@ public class EnemyMove : MonoBehaviour
                 {
                     pEnd = false;
                 };
-            }
+            }*/
     }
 }
