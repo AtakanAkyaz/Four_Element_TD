@@ -3,18 +3,23 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 using Random = System.Random;
 
 public class Enemy : MonoBehaviour
 {
-
-    public int health = 100;
-    public float distance = 0;
-    public Vector3 pLocation;
+    public GameObject healthBarCanvas;
+    public Slider healthBarSlider;
+    public float maxHealth = 100;
+    public float health = 100;
+    public static float distanceMoved = 0;
+    public Vector3 lastPosition;
 
     public void Start()
     {
         InvokeRepeating("calculateDistance", 0f, 0.5f);
+        InvokeRepeating("SearchTarget",0,0.1f);
+        InvokeRepeating("healthPercentage",0,0.1f);
     }
     public void Update()
     {
@@ -24,8 +29,8 @@ public class Enemy : MonoBehaviour
             Destroy(gameObject);
             Money.money += 50;
         }
-        
-        
+
+       
     }
 
 
@@ -61,7 +66,12 @@ public class Enemy : MonoBehaviour
 
     private void calculateDistance()
     {
-        distance += Vector3.Distance(transform.position, pLocation);
-        pLocation = transform.position;
+        distanceMoved += Vector3.Distance(transform.position, lastPosition);
+        lastPosition = transform.position;
+    }
+    
+    public float healthPercentage()
+    {
+        return   healthBarSlider.value =health / maxHealth;
     }
 }

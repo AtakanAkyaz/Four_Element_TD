@@ -14,6 +14,6 @@ public class Money : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        MoneyText.text = "Money : " + (money).ToString();
+        MoneyText.text = "Money : " + (money).ToString() + " " + Turret.towerLevel.ToString();
     }
 }

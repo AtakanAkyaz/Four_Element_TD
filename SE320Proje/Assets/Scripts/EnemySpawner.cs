@@ -12,7 +12,7 @@ public class EnemySpawner : MonoBehaviour
 
     private void Update()
     {
-        if (WaveTime >= 15f && WaveCounter != 0)
+        if (WaveTime >= 5f && WaveCounter != 0)
         {
             StartCoroutine(SpawnEnemies());
             WaveTime = 0f;
@@ -27,12 +27,12 @@ public class EnemySpawner : MonoBehaviour
         for (int i = 0; i < 5; i++)
         {
             SpawnEnimie();
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.7f);
         }
     }
 
     void SpawnEnimie()
     {
-        Instantiate(WhichEnemyWillSpawned, SpawnPoint.position, SpawnPoint.rotation);
+        Instantiate(WhichEnemyWillSpawned, SpawnPoint.position,  Quaternion.Euler(0, 90, 0));
     }
 }

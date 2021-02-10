@@ -6,6 +6,7 @@ public class TowerCursor : MonoBehaviour
 {
     public Transform towerCursor;
     private GameObject towerHit;
+    
 
     
     public static bool sellUpgradePanelOpen;
@@ -37,6 +38,32 @@ public class TowerCursor : MonoBehaviour
         sellUpgradePanelOpen = false;
         Cursor.visible = false;
         Time.timeScale = 1f;
+        if ( Turret.towerLevelCnt == 2)
+        {
+            if (Money.money >= 200)
+            {
+                Turret.towerLevel = 2;
+                Turret.towerLevelCnt += 1;
+            }
+            else
+            {
+                // paran yetersiz bildirimi
+            }
+            
+        }
+        
+        else if ( Turret.towerLevelCnt == 3)
+        {
+            if (Money.money >= 1200)
+            {
+                Turret.towerLevel = 3; 
+            }
+            else
+            {
+                // paran yetersiz bildirimi
+            }
+        }
+       
     }
 
     void Start()
@@ -85,7 +112,6 @@ public class TowerCursor : MonoBehaviour
             sellUpgradeTextOpen = false;
             selection.material = towerBottomMaterial;
         }
-
 
     }
 }
