@@ -60,6 +60,31 @@ public class Enemy : MonoBehaviour
            // End of damage taken from turret
            
        }
+       
+       if(collusion.gameObject.tag.Equals("RapidBullet"))
+       {
+           // Damage taken from turret
+           if(RapidTurret.towerLevel == 1)
+           {
+               Random random = new Random();
+               int Bullet1Damage = random.Next(11, 13);
+               health -= Bullet1Damage;
+           }
+           if(Turret.towerLevel == 2)
+           {
+               Random random = new Random();
+               int Bullet1Damage = random.Next(14, 16);
+               health -= Bullet1Damage;
+           }
+           if(Turret.towerLevel == 3)
+           {
+               Random random = new Random();
+               int Bullet1Damage = random.Next(17, 18);
+               health -= Bullet1Damage;
+           }
+           // End of damage taken from turret
+           
+       }
     }
 
     //player damaged

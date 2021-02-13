@@ -104,11 +104,14 @@
           <e p="EnemyMove.cs" t="Include" />
           <e p="EnemyOnEndPoint.cs" t="Include" />
           <e p="EnemySpawner.cs" t="Include" />
+          <e p="FallowCamera.cs" t="Include" />
           <e p="Lives.cs" t="Include" />
           <e p="Mapping.cs" t="Include" />
           <e p="Money.cs" t="Include" />
           <e p="NaviCursor.cs" t="Include" />
           <e p="PauseScreen.cs" t="Include" />
+          <e p="RapidBullet.cs" t="Include" />
+          <e p="RapidTurret.cs" t="Include" />
           <e p="StartMenu.cs" t="Include" />
           <e p="Timer.cs" t="Include" />
           <e p="TowerCursor.cs" t="Include" />

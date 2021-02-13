@@ -1,15 +1,22 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 
 public class EnemySpawner : MonoBehaviour
 {
-    public int WaveCounter = 5;
+    public int WaveCounter = 1;
     private float WaveTime = 0f;
     public Transform SpawnPoint;
     public GameObject WhichEnemyWillSpawned;
+    
+    
 
+
+  
+    
+   
     private void Update()
     {
         if (WaveTime >= 5f && WaveCounter != 0)
@@ -24,7 +31,7 @@ public class EnemySpawner : MonoBehaviour
 
     IEnumerator SpawnEnemies()
     {
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < 3; i++)
         {
             SpawnEnimie();
             yield return new WaitForSeconds(0.7f);
@@ -34,5 +41,6 @@ public class EnemySpawner : MonoBehaviour
     void SpawnEnimie()
     {
         Instantiate(WhichEnemyWillSpawned, SpawnPoint.position,  Quaternion.Euler(0, 90, 0));
+        
     }
 }

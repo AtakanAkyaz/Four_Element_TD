@@ -231,7 +231,6 @@ MonoBehaviour:
   healthBarSlider: {fileID: 2259262199420690416}
   maxHealth: 100
   health: 100
-  distanceMoved: 0
   lastPosition: {x: 0, y: 0, z: 0}
 --- !u!195 &2112852339887987366
 NavMeshAgent:
@@ -356,6 +355,7 @@ GameObject:
   - component: {fileID: 4668930932098840990}
   - component: {fileID: 6437608977135649358}
   - component: {fileID: 2821415908852607713}
+  - component: {fileID: 5025145257686504178}
   m_Layer: 9
   m_Name: Canvas
   m_TagString: Untagged
@@ -443,6 +443,20 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &5025145257686504178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5376073263543877789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e0cf53769a81564685834d66e0402fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainCamere: {fileID: 2388103189537594638, guid: cd71b39af7a18554fa4746b23e05bbbe,
+    type: 3}
 --- !u!1 &5731402617770295106
 GameObject:
   m_ObjectHideFlags: 0

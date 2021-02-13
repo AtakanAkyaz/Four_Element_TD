@@ -78,11 +78,14 @@
      <Compile Include="Assets\Scripts\EnemyMove.cs" />
      <Compile Include="Assets\Scripts\EnemyOnEndPoint.cs" />
      <Compile Include="Assets\Scripts\EnemySpawner.cs" />
+     <Compile Include="Assets\Scripts\FallowCamera.cs" />
      <Compile Include="Assets\Scripts\Lives.cs" />
      <Compile Include="Assets\Scripts\Mapping.cs" />
      <Compile Include="Assets\Scripts\Money.cs" />
      <Compile Include="Assets\Scripts\NaviCursor.cs" />
      <Compile Include="Assets\Scripts\PauseScreen.cs" />
+     <Compile Include="Assets\Scripts\RapidBullet.cs" />
+     <Compile Include="Assets\Scripts\RapidTurret.cs" />
      <Compile Include="Assets\Scripts\StartMenu.cs" />
      <Compile Include="Assets\Scripts\Timer.cs" />
      <Compile Include="Assets\Scripts\TowerCursor.cs" />

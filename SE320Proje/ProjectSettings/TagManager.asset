@@ -7,6 +7,7 @@ TagManager:
   - EndPoint
   - Enemy
   - Bullet
+  - RapidBullet
   layers:
   - Default
   - TransparentFX

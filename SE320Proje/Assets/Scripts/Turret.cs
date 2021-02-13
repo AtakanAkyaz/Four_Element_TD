@@ -13,6 +13,7 @@ public class Turret : MonoBehaviour
     public Transform target;
     public static int towerLevel = 1;
     public static int  towerLevelCnt = 2;
+    public static float tempMove =0;
 
 
     private void Start()
@@ -61,25 +62,30 @@ if(towerLevel == 3)
 
     private void SearchTarget()
     {
-        GameObject[] Enemy = GameObject.FindGameObjectsWithTag("Enemy");
-        float maxMovedEnemy = global::Enemy.distanceMoved;
+       
         GameObject Target = null;
-
+        GameObject[] Enemy = GameObject.FindGameObjectsWithTag("Enemy");
+        float inRange = Mathf.Infinity; 
+        float maxMoveDistance = global::Enemy.distanceMoved;
+        
         foreach (GameObject enemy in Enemy)
         {
-            float distance = 0;
-            if (distance < maxMovedEnemy)
+            float distance = Vector3.Distance(transform.position, enemy.transform.position);
+           
+            if (maxMoveDistance > tempMove && distance <= range)
             {
-                maxMovedEnemy = distance;
+                inRange = distance;
+                tempMove = maxMoveDistance;
                 Target = enemy;
             }
+            
         }
 
-        if (Target != null && maxMovedEnemy <= range)
+        if (Target != null && inRange <= range)
         {
             target = Target.transform;
         }
-        else
+        else 
         {
             target = null;
         }
@@ -94,5 +100,6 @@ if(towerLevel == 3)
             bullet.Fallow(target);
         }
     }
-    
+
+   
 }
