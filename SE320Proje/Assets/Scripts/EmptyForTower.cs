@@ -11,12 +11,13 @@ public class EmptyForTower : MonoBehaviour
     {
         if (Turret.towerLevel == 2)
         {
-            towerHead.GetComponent<Renderer> ().material.color = Color.cyan;
+            towerHead.GetComponent<Renderer>().material.color = Color.cyan;
         }
 
         if (Turret.towerLevel == 3)
         {
-            towerHead.GetComponent<Renderer> ().material.color = Color.yellow;
+            towerHead.GetComponent<Renderer>().material.color = Color.yellow;
         }
+        
     }
 }

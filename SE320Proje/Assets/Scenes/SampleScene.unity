@@ -6926,6 +6926,7 @@ MonoBehaviour:
   normalColor: {fileID: 2100000, guid: 334e324343b93c549a7e43f1ac2472ea, type: 2}
   tower1: {fileID: 7708956692461282688, guid: d37a66e5d654ca8409d9574cc0693219, type: 3}
   cursor: {fileID: 1738371104}
+  tower2: {fileID: 4933564192169876332, guid: f5e6132a2cdaa4b46bb19cbf16bf1538, type: 3}
 --- !u!1 &1768717255
 GameObject:
   m_ObjectHideFlags: 0

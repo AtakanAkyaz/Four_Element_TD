@@ -23,7 +23,30 @@ public class TowerCursor : MonoBehaviour
 
     public void sell()
     {
-        Money.money += 100;
+        if (Turret.towerLevel == 1)
+        {
+            Money.money += 100;
+        }
+        else if (Turret.towerLevel == 2)
+        {
+            Money.money += 300;
+        }
+        else if (Turret.towerLevel == 3)
+        {
+            Money.money += 800;
+        }
+        else if (RapidTurret.towerLevel == 1)
+        {
+            Money.money += 100;
+        }
+        else if (RapidTurret.towerLevel == 2)
+        {
+            Money.money += 300;
+        }
+        else if (RapidTurret.towerLevel == 3)
+        {
+            Money.money += 800;
+        }
         sellUpgradePanel.SetActive(false);
         sellUpgradePanelOpen = false;
         Instantiate(towerPoints, towerHit.transform.position, towerHit.transform.rotation);
@@ -40,10 +63,11 @@ public class TowerCursor : MonoBehaviour
         Time.timeScale = 1f;
         if ( Turret.towerLevelCnt == 2)
         {
-            if (Money.money >= 200)
+            if (Money.money >= 400)
             {
                 Turret.towerLevel = 2;
                 Turret.towerLevelCnt += 1;
+                Money.money -= 400;
             }
             else
             {
@@ -54,16 +78,45 @@ public class TowerCursor : MonoBehaviour
         
         else if ( Turret.towerLevelCnt == 3)
         {
-            if (Money.money >= 1200)
+            if (Money.money >= 1000)
             {
-                Turret.towerLevel = 3; 
+                Turret.towerLevel = 3;
+                Money.money -= 1000;
             }
             else
             {
                 // paran yetersiz bildirimi
             }
         }
-       
+
+        else if(RapidTurret.towerLevelCnt == 2)
+        {
+            if (Money.money >= 400)
+            {
+                RapidTurret.towerLevel = 2;
+                RapidTurret.towerLevelCnt += 1;
+                Money.money -= 400;
+            }
+            else
+            {
+                // paran yetersiz bildirimi
+            }
+
+        }
+
+        else if (RapidTurret.towerLevelCnt == 3)
+        {
+            if (Money.money >= 1000)
+            {
+                RapidTurret.towerLevel = 3;
+                Money.money -= 1000;
+            }
+            else
+            {
+                // paran yetersiz bildirimi
+            }
+        }
+
     }
 
     void Start()
@@ -82,6 +135,7 @@ public class TowerCursor : MonoBehaviour
 
         var whichTowerHit = hit.transform;
         towerHit = whichTowerHit.gameObject;
+        var isTower = whichTowerHit.gameObject.GetComponent<EmptyForTower>();
         var isTower = whichTowerHit.gameObject.GetComponent<EmptyForTower>();
         var towerRendererHit = whichTowerHit.GetComponent<Renderer>();
         
