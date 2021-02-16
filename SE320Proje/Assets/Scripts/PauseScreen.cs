@@ -23,10 +23,12 @@ public class PauseScreen : MonoBehaviour
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene("SampleScene");
-        Money.money = 1000;
+        Money.money = 5000;
         Lives.life = 20;
         Timer.second = 0f;
         Timer.minute = 0;
+        RapidTurret.towerLevel = 1;
+        Turret.towerLevel = 1;
     }
 
     public void quitMainMenu()

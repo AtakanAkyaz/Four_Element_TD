@@ -99,6 +99,7 @@
           <e p="Control.cs" t="Include" />
           <e p="EmptyForCursor.cs" t="Include" />
           <e p="EmptyForTower.cs" t="Include" />
+          <e p="EmptyForTowerTwo.cs" t="Include" />
           <e p="EndPoint.cs" t="Include" />
           <e p="Enemy.cs" t="Include" />
           <e p="EnemyMove.cs" t="Include" />

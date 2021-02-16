@@ -2,17 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+    
+    
 public class EmptyForTowerTwo : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameObject RapidTowerHead;
+    private void Update()
     {
-        
-    }
+        if (RapidTurret.towerLevel == 2)
+        {
+            RapidTowerHead.GetComponent<Renderer>().material.color = Color.cyan;
+        }
 
-    // Update is called once per frame
-    void Update()
-    {
+        if (RapidTurret.towerLevel == 3)
+        {
+            RapidTowerHead.GetComponent<Renderer>().material.color = Color.yellow;
+        }
         
     }
 }

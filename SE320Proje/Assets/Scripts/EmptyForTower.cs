@@ -7,6 +7,7 @@ using UnityEngine;
 public class EmptyForTower : MonoBehaviour
 {
     public GameObject towerHead;
+    public GameObject RapidTowerHead;
     private void Update()
     {
         if (Turret.towerLevel == 2)
@@ -14,9 +15,19 @@ public class EmptyForTower : MonoBehaviour
             towerHead.GetComponent<Renderer>().material.color = Color.cyan;
         }
 
-        if (Turret.towerLevel == 3)
+        else if (Turret.towerLevel == 3)
         {
             towerHead.GetComponent<Renderer>().material.color = Color.yellow;
+        }
+        
+        else if (RapidTurret.towerLevel == 2)
+        {
+            RapidTowerHead.GetComponent<Renderer>().material.color = Color.cyan;
+        }
+
+        else if (RapidTurret.towerLevel == 3)
+        {
+            RapidTowerHead.GetComponent<Renderer>().material.color = Color.yellow;
         }
         
     }

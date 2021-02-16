@@ -250,7 +250,7 @@ GameObject:
   - component: {fileID: 8872374144606618055}
   - component: {fileID: 4044960850140168395}
   - component: {fileID: 4156703583998001257}
-  - component: {fileID: -1826669069719811968}
+  - component: {fileID: -7467637551303576811}
   m_Layer: 0
   m_Name: Turret
   m_TagString: Untagged
@@ -333,7 +333,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &-1826669069719811968
+--- !u!114 &-7467637551303576811
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -346,4 +346,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   towerHead: {fileID: 3096118520661871222}
-  rapidTowerHead: {fileID: 0}

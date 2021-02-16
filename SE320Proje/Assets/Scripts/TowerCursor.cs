@@ -61,62 +61,31 @@ public class TowerCursor : MonoBehaviour
         sellUpgradePanelOpen = false;
         Cursor.visible = false;
         Time.timeScale = 1f;
-        if ( Turret.towerLevelCnt == 2)
+        if ( Turret.towerLevelCnt == 2 && Money.money >=400)
         {
-            if (Money.money >= 400)
-            {
-                Turret.towerLevel = 2;
+                  Turret.towerLevel = 2;
                 Turret.towerLevelCnt += 1;
                 Money.money -= 400;
-            }
-            else
-            {
-                // paran yetersiz bildirimi
-            }
-            
         }
         
-        else if ( Turret.towerLevelCnt == 3)
+        else if ( Turret.towerLevelCnt == 3 && Money.money >= 1000)
         {
-            if (Money.money >= 1000)
-            {
-                Turret.towerLevel = 3;
+                 Turret.towerLevel = 3;
                 Money.money -= 1000;
-            }
-            else
-            {
-                // paran yetersiz bildirimi
-            }
         }
 
-        else if(RapidTurret.towerLevelCnt == 2)
+        else if(RapidTurret.towerLevelCnt == 2 && Money.money >= 400)
         {
-            if (Money.money >= 400)
-            {
                 RapidTurret.towerLevel = 2;
                 RapidTurret.towerLevelCnt += 1;
                 Money.money -= 400;
-            }
-            else
-            {
-                // paran yetersiz bildirimi
-            }
-
         }
 
-        else if (RapidTurret.towerLevelCnt == 3)
+        else if (RapidTurret.towerLevelCnt == 3 && Money.money >= 1000)
         {
-            if (Money.money >= 1000)
-            {
-                RapidTurret.towerLevel = 3;
+            RapidTurret.towerLevel = 3;
                 Money.money -= 1000;
-            }
-            else
-            {
-                // paran yetersiz bildirimi
-            }
         }
-
     }
 
     void Start()
@@ -136,12 +105,11 @@ public class TowerCursor : MonoBehaviour
         var whichTowerHit = hit.transform;
         towerHit = whichTowerHit.gameObject;
         var isTower = whichTowerHit.gameObject.GetComponent<EmptyForTower>();
-        var isTower = whichTowerHit.gameObject.GetComponent<EmptyForTower>();
         var towerRendererHit = whichTowerHit.GetComponent<Renderer>();
         
         
 
-        if(isTower!=null && sellUpgradePanelOpen == false)
+        if( isTower != null && sellUpgradePanelOpen == false)
         {
             sellUpgradeText.SetActive(true);
             sellUpgradeTextOpen = true;
