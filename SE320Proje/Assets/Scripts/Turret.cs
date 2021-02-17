@@ -8,7 +8,7 @@ public class Turret : MonoBehaviour
     public AudioSource turretSound;
     public AudioClip turretShoot;
 
-    public float range = 12f;
+    public float range = 8f;
     public float fireTime = 0f;
     public GameObject shootingObject;
     public Transform gunPoint;
@@ -20,7 +20,7 @@ public class Turret : MonoBehaviour
 
     private void Start()
     {
-        InvokeRepeating("SearchTarget", 0f, 0.3f);
+        InvokeRepeating("SearchTarget", 0f, 1f);
     }
 
     private void Update()
@@ -30,8 +30,9 @@ public class Turret : MonoBehaviour
             return;
         }
 
-       
-        transform.LookAt(target); 
+        Vector3 relativePos = target.position - transform.position;
+        Quaternion rotation = Quaternion.LookRotation(relativePos);
+        gameObject.transform.rotation = Quaternion.Euler(0f, rotation.eulerAngles.y, 0f);
         // fire spped
 if(towerLevel == 1)
 {
@@ -68,7 +69,7 @@ if(towerLevel == 3)
         GameObject Target = null;
         GameObject[] Enemy = GameObject.FindGameObjectsWithTag("Enemy");
         float inRange = Mathf.Infinity; 
-        float maxMoveDistance = global::Enemy.distanceMoved;
+        float maxMoveDistance = global::EnemySpawner.DistanceMoved;
         
         foreach (GameObject enemy in Enemy)
         {

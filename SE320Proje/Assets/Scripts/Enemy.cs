@@ -12,11 +12,12 @@ public class Enemy : MonoBehaviour
     public Slider healthBarSlider;
     public float maxHealth = 100;
     public float health = 100;
-    public static float distanceMoved = 0;
+    public static float enemyDistanceMoved = 0;
     public Vector3 lastPosition;
 
     public void Start()
     {
+        
         InvokeRepeating("calculateDistance", 0f, 0.5f);
         InvokeRepeating("SearchTarget",0,0.1f);
         InvokeRepeating("healthPercentage",0,0.1f);
@@ -28,59 +29,85 @@ public class Enemy : MonoBehaviour
         {
             Destroy(gameObject);
             Money.money += 50;
+            EnemySpawner.DistanceMoved = 0;
         }
 
        
     }
 
 
-    public void OnCollisionEnter(Collision collusion)
+    public void OnTriggerEnter(Collider collider)
     {
-       if(collusion.gameObject.tag.Equals("Bullet"))
+       if(collider.gameObject.tag.Equals("Bullet"))
        {
            // Damage taken from turret
            if(Turret.towerLevel == 1)
            {
               Random random = new Random();
-                         int Bullet1Damage = random.Next(23, 33);
+                         int Bullet1Damage = random.Next(17, 24);
                          health -= Bullet1Damage;
            }
-           if(Turret.towerLevel == 2)
+           else if(Turret.towerLevel == 2)
            {
                Random random = new Random();
-               int Bullet1Damage = random.Next(33, 43);
+               int Bullet1Damage = random.Next(22, 33);
                health -= Bullet1Damage;
            }
-           if(Turret.towerLevel == 3)
+           else if(Turret.towerLevel == 3)
            {
                Random random = new Random();
-               int Bullet1Damage = random.Next(100, 101);
+               int Bullet1Damage = random.Next(30, 40);
                health -= Bullet1Damage;
            }
            // End of damage taken from turret
            
        }
        
-       if(collusion.gameObject.tag.Equals("RapidBullet"))
+       if(collider.gameObject.tag.Equals("RapidBullet"))
        {
            // Damage taken from turret
-           if(RapidTurret.towerLevel == 1)
+           if(RapidTurret.rapidTowerLevel == 1)
            {
                Random random = new Random();
-               int Bullet1Damage = random.Next(11, 13);
-               health -= Bullet1Damage;
+               int Bullet2Damage = random.Next(5, 7);
+               health -= Bullet2Damage;
            }
-           if(Turret.towerLevel == 2)
+           else if(RapidTurret.rapidTowerLevel == 2)
            {
                Random random = new Random();
-               int Bullet1Damage = random.Next(14, 16);
-               health -= Bullet1Damage;
+               int Bullet2Damage = random.Next(6, 8);
+               health -= Bullet2Damage;
            }
-           if(Turret.towerLevel == 3)
+           else if(RapidTurret.rapidTowerLevel == 3)
            {
                Random random = new Random();
-               int Bullet1Damage = random.Next(17, 18);
-               health -= Bullet1Damage;
+               int Bullet2Damage = random.Next(8, 10);
+               health -= Bullet2Damage;
+           }
+           // End of damage taken from turret
+           
+       }
+       
+       if(collider.gameObject.tag.Equals("SniperBullet"))
+       {
+           // Damage taken from turret
+           if(SniperTower.sniperTowerLevel == 1)
+           {
+               Random random = new Random();
+               int Bullet3Damage = random.Next(50, 60);
+               health -= Bullet3Damage;
+           }
+           else if(SniperTower.sniperTowerLevel == 2)
+           {
+               Random random = new Random();
+               int Bullet3Damage = random.Next(60, 70);
+               health -= Bullet3Damage;
+           }
+           else if(SniperTower.sniperTowerLevel == 3)
+           {
+               Random random = new Random();
+               int Bullet3Damage = random.Next(70, 80);
+               health -= Bullet3Damage;
            }
            // End of damage taken from turret
            
@@ -91,7 +118,7 @@ public class Enemy : MonoBehaviour
 
     private void calculateDistance()
     {
-        distanceMoved += Vector3.Distance(transform.position, lastPosition);
+        enemyDistanceMoved += Vector3.Distance(transform.position, lastPosition);
         lastPosition = transform.position;
     }
     

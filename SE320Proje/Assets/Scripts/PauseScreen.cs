@@ -27,7 +27,11 @@ public class PauseScreen : MonoBehaviour
         Lives.life = 20;
         Timer.second = 0f;
         Timer.minute = 0;
-        RapidTurret.towerLevel = 1;
+        SniperTower.sniperTowerLevelCnt = 2;
+        RapidTurret.rapidTowerLevelCnt = 2;
+        Turret.towerLevelCnt = 2;
+        SniperTower.sniperTowerLevel = 1;
+        RapidTurret.rapidTowerLevel = 1;
         Turret.towerLevel = 1;
     }
 

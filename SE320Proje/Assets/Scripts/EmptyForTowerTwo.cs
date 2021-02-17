@@ -5,7 +5,7 @@ using UnityEngine;
     
     
 public class EmptyForTowerTwo : MonoBehaviour
-{
+{/*
     public GameObject RapidTowerHead;
     private void Update()
     {
@@ -19,5 +19,5 @@ public class EmptyForTowerTwo : MonoBehaviour
             RapidTowerHead.GetComponent<Renderer>().material.color = Color.yellow;
         }
         
-    }
+    }*/
 }

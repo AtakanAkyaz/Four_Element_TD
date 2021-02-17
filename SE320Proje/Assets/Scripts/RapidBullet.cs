@@ -6,7 +6,7 @@ using UnityEngine;
 public class RapidBullet : MonoBehaviour
 {
     public Transform target;
-    float speed = 10f;
+    float speed = 20f;
 
     // Update is called once per frame
     void Update()
@@ -20,9 +20,9 @@ public class RapidBullet : MonoBehaviour
         transform.Translate(dir.normalized * bulletSpeed, Space.World);
     }
 
-    public void OnCollisionEnter(Collision collision)
+    public void OnTriggerEnter(Collider collider)
     {
-        if (collision.gameObject.tag.Equals("Enemy"))
+        if (collider.gameObject.tag.Equals("Enemy"))
         {
             Destroy(gameObject);
         }

@@ -20,9 +20,9 @@ public class Bullet : MonoBehaviour
         transform.Translate(dir.normalized * bulletSpeed, Space.World);
     }
 
-    public void OnCollisionEnter(Collision collision)
+    public void OnTriggerEnter(Collider collider)
     {
-        if (collision.gameObject.tag.Equals("Enemy"))
+        if (collider.gameObject.tag.Equals("Enemy"))
         {
             Destroy(gameObject);
         }

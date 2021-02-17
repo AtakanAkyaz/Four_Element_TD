@@ -109,6 +109,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   towerHead: {fileID: 0}
   RapidTowerHead: {fileID: 6667599863271313482}
+  SniperTowerCapsule: {fileID: 0}
 --- !u!1 &6576368181782343815
 GameObject:
   m_ObjectHideFlags: 0
@@ -314,7 +315,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rapidTurretShoot: {fileID: 8300000, guid: bfe1035c0f4467941bdc6783d04bb6e9, type: 3}
   rapidTurretSound: {fileID: 9183278370397137942}
-  range: 5
+  range: 7
   fireTime: 0
   shootingObject: {fileID: 5813412079211884230, guid: 7e27ac08f3a0b6245bc33db3ff721804,
     type: 3}

@@ -8,6 +8,7 @@
       <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
+        <e p="CollectHearth.cs" t="Include" />
         <e p="NavMeshComponents-master" t="Include">
           <e p="Assets" t="Include">
             <e p="Examples" t="Include">
@@ -106,6 +107,7 @@
           <e p="EnemyOnEndPoint.cs" t="Include" />
           <e p="EnemySpawner.cs" t="Include" />
           <e p="FallowCamera.cs" t="Include" />
+          <e p="FastEnemy.cs" t="Include" />
           <e p="Lives.cs" t="Include" />
           <e p="Mapping.cs" t="Include" />
           <e p="Money.cs" t="Include" />
@@ -113,6 +115,8 @@
           <e p="PauseScreen.cs" t="Include" />
           <e p="RapidBullet.cs" t="Include" />
           <e p="RapidTurret.cs" t="Include" />
+          <e p="SniperBullet.cs" t="Include" />
+          <e p="SniperTower.cs" t="Include" />
           <e p="StartMenu.cs" t="Include" />
           <e p="Timer.cs" t="Include" />
           <e p="TowerCursor.cs" t="Include" />

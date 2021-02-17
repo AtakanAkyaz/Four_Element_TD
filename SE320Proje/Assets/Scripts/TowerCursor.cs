@@ -7,7 +7,6 @@ public class TowerCursor : MonoBehaviour
     public Transform towerCursor;
     private GameObject towerHit;
     
-
     
     public static bool sellUpgradePanelOpen;
     private bool sellUpgradeTextOpen;
@@ -35,15 +34,27 @@ public class TowerCursor : MonoBehaviour
         {
             Money.money += 800;
         }
-        else if (RapidTurret.towerLevel == 1)
+        else if (RapidTurret.rapidTowerLevel == 1)
         {
             Money.money += 100;
         }
-        else if (RapidTurret.towerLevel == 2)
+        else if (RapidTurret.rapidTowerLevel == 2)
         {
             Money.money += 300;
         }
-        else if (RapidTurret.towerLevel == 3)
+        else if (RapidTurret.rapidTowerLevel == 3)
+        {
+            Money.money += 800;
+        }
+        else if (SniperTower.sniperTowerLevel == 1)
+        {
+            Money.money += 100;
+        }
+        else if (SniperTower.sniperTowerLevel == 2)
+        {
+            Money.money += 300;
+        }
+        else if (SniperTower.sniperTowerLevel == 3)
         {
             Money.money += 800;
         }
@@ -61,6 +72,7 @@ public class TowerCursor : MonoBehaviour
         sellUpgradePanelOpen = false;
         Cursor.visible = false;
         Time.timeScale = 1f;
+        
         if ( Turret.towerLevelCnt == 2 && Money.money >=400)
         {
                   Turret.towerLevel = 2;
@@ -74,18 +86,32 @@ public class TowerCursor : MonoBehaviour
                 Money.money -= 1000;
         }
 
-        else if(RapidTurret.towerLevelCnt == 2 && Money.money >= 400)
+        else if(RapidTurret.rapidTowerLevelCnt == 2 && Money.money >= 400)
         {
-                RapidTurret.towerLevel = 2;
-                RapidTurret.towerLevelCnt += 1;
+                RapidTurret.rapidTowerLevel = 2;
+                RapidTurret.rapidTowerLevelCnt += 1;
                 Money.money -= 400;
         }
 
-        else if (RapidTurret.towerLevelCnt == 3 && Money.money >= 1000)
+        else if (RapidTurret.rapidTowerLevelCnt == 3 && Money.money >= 1000)
         {
-            RapidTurret.towerLevel = 3;
+            RapidTurret.rapidTowerLevel = 3;
                 Money.money -= 1000;
         }
+        
+        else if(SniperTower.sniperTowerLevelCnt == 2 && Money.money >= 400)
+        {
+            SniperTower.sniperTowerLevel = 2;
+            SniperTower.sniperTowerLevelCnt += 1;
+            Money.money -= 400;
+        }
+
+        else if (SniperTower.sniperTowerLevelCnt == 3 && Money.money >= 1000)
+        {
+            SniperTower.sniperTowerLevel = 3;
+            Money.money -= 1000;
+        }
+        
     }
 
     void Start()
