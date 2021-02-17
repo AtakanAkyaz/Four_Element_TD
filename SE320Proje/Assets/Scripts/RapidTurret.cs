@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class RapidTurret : MonoBehaviour
 {
+    public AudioClip rapidTurretShoot;
+    public AudioSource rapidTurretSound;
     
     public float range = 5f;
     public float fireTime = 0f;
@@ -95,6 +97,7 @@ if(towerLevel == 3)
     {
         GameObject firedBullet = (GameObject) Instantiate(shootingObject, gunPoint.position, gunPoint.rotation);
         RapidBullet bullet = firedBullet.GetComponent<RapidBullet>();
+        rapidTurretSound.PlayOneShot(rapidTurretShoot);
         if (bullet != null)
         {
             bullet.Fallow(target);

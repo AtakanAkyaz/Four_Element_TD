@@ -6,6 +6,7 @@ public class CollectibleSpawner : MonoBehaviour
 {
     private float spawnTime;
     public GameObject ignot;
+    public GameObject heart;
     private float x;
     private float z;
     
@@ -22,13 +23,29 @@ public class CollectibleSpawner : MonoBehaviour
         spawnTime = 0f;
     }
 
+    public void spawnCollectibleHeart()
+    {
+        x = Random.value * 50;
+        z = Random.value * 50;
+        Instantiate(heart, new Vector3(x, 3.5f, z), Quaternion.Euler(-90f, 90f, 0f));
+        spawnTime = 0f;
+    }
+
     // Update is called once per frame
     void Update()
     {
         spawnTime += Time.deltaTime;
-        if (spawnTime >= 5f)
+        if (spawnTime >= 10f)
         {
-            spawnCollectible();
+            float y = Random.Range(0f, 1f);
+            if (y >= 0.95)
+            {
+                spawnCollectibleHeart();
+            }
+            else
+            {
+                spawnCollectible();
+            }
         }
     }
 }

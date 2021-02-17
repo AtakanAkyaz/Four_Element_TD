@@ -5,7 +5,9 @@ using UnityEngine;
 
 public class Turret : MonoBehaviour
 {
-    
+    public AudioSource turretSound;
+    public AudioClip turretShoot;
+
     public float range = 12f;
     public float fireTime = 0f;
     public GameObject shootingObject;
@@ -95,6 +97,7 @@ if(towerLevel == 3)
     {
         GameObject firedBullet = (GameObject) Instantiate(shootingObject, gunPoint.position, gunPoint.rotation);
         Bullet bullet = firedBullet.GetComponent<Bullet>();
+        turretSound.PlayOneShot(turretShoot);
         if (bullet != null)
         {
             bullet.Fallow(target);
