@@ -23,7 +23,7 @@ public class PauseScreen : MonoBehaviour
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene("SampleScene");
-        Money.money = 5000;
+        Money.money = 1000;
         Lives.life = 20;
         Timer.second = 0f;
         Timer.minute = 0;

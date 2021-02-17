@@ -77,13 +77,13 @@ public class TowerCursor : MonoBehaviour
         {
             Turret.towerLevel = 2;
             Turret.towerLevelCnt += 1;
-            Money.money -= 400;
+            Money.money -= 3000;
         }
 
         else if (Turret.towerLevelCnt == 3 && Money.money >= 1000)
         {
             Turret.towerLevel = 3;
-            Money.money -= 1000;
+            Money.money -= 8000;
             Turret.towerLevelCnt += 1;
         }
         else
@@ -102,14 +102,14 @@ public class TowerCursor : MonoBehaviour
         {
             RapidTurret.rapidTowerLevel = 2;
             RapidTurret.rapidTowerLevelCnt += 1;
-            Money.money -= 400;
+            Money.money -= 3000;
         }
 
         else if (RapidTurret.rapidTowerLevelCnt == 3 && Money.money >= 1000)
         {
             RapidTurret.rapidTowerLevel = 3;
             RapidTurret.rapidTowerLevelCnt += 1;
-            Money.money -= 1000;
+            Money.money -= 8000;
         }
         else
         {
@@ -127,7 +127,7 @@ public class TowerCursor : MonoBehaviour
         {
             SniperTower.sniperTowerLevel = 2;
             SniperTower.sniperTowerLevelCnt += 1;
-            Money.money -= 400;
+            Money.money -= 3000;
         }
 
 
@@ -135,7 +135,7 @@ public class TowerCursor : MonoBehaviour
         {
             SniperTower.sniperTowerLevel = 3;
             SniperTower.sniperTowerLevelCnt += 1;
-            Money.money -= 1000;
+            Money.money -= 8000;
         }
         else
         {

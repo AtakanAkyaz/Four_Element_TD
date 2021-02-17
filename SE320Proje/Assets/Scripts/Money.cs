@@ -7,7 +7,7 @@ public class Money : MonoBehaviour
 {
 
     public Text MoneyText;
-    public static int money = 5000;
+    public static int money = 50000;
     // Start is called before the first frame update
     
 

@@ -607,11 +607,11 @@
     <Reference Include="UnityEditor.TestRunner">
       <HintPath>C:/Users/assas/OneDrive/Masaüstü/Four_Element_TD/SE320Proje/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEditor.UI">
-      <HintPath>C:/Users/assas/OneDrive/Masaüstü/Four_Element_TD/SE320Proje/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>C:/Users/assas/OneDrive/Masaüstü/Four_Element_TD/SE320Proje/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.UI">
+      <HintPath>C:/Users/assas/OneDrive/Masaüstü/Four_Element_TD/SE320Proje/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
