@@ -66,54 +66,91 @@ public class TowerCursor : MonoBehaviour
         Time.timeScale = 1f;
     }
 
-    public void upgrade()
+    public void upNormal()
     {
         sellUpgradePanel.SetActive(false);
         sellUpgradePanelOpen = false;
         Cursor.visible = false;
         Time.timeScale = 1f;
-        
-        if ( Turret.towerLevelCnt == 2 && Money.money >=400)
+
+        if (Turret.towerLevelCnt == 2 && Money.money >= 400)
         {
-                  Turret.towerLevel = 2;
-                Turret.towerLevelCnt += 1;
-                Money.money -= 400;
-        }
-        
-        else if ( Turret.towerLevelCnt == 3 && Money.money >= 1000)
-        {
-                 Turret.towerLevel = 3;
-                Money.money -= 1000;
+            Turret.towerLevel = 2;
+            Turret.towerLevelCnt += 1;
+            Money.money -= 400;
         }
 
-        else if(RapidTurret.rapidTowerLevelCnt == 2 && Money.money >= 400)
+        else if (Turret.towerLevelCnt == 3 && Money.money >= 1000)
         {
-                RapidTurret.rapidTowerLevel = 2;
-                RapidTurret.rapidTowerLevelCnt += 1;
-                Money.money -= 400;
+            Turret.towerLevel = 3;
+            Money.money -= 1000;
+            Turret.towerLevelCnt += 1;
+        }
+        else
+        {
+            return;
+        }
+    }
+    public void upRapid()
+    {
+        sellUpgradePanel.SetActive(false);
+        sellUpgradePanelOpen = false;
+        Cursor.visible = false;
+        Time.timeScale = 1f;
+
+        if (RapidTurret.rapidTowerLevelCnt == 2 && Money.money >= 400)
+        {
+            RapidTurret.rapidTowerLevel = 2;
+            RapidTurret.rapidTowerLevelCnt += 1;
+            Money.money -= 400;
         }
 
         else if (RapidTurret.rapidTowerLevelCnt == 3 && Money.money >= 1000)
         {
             RapidTurret.rapidTowerLevel = 3;
-                Money.money -= 1000;
+            RapidTurret.rapidTowerLevelCnt += 1;
+            Money.money -= 1000;
         }
-        
-        else if(SniperTower.sniperTowerLevelCnt == 2 && Money.money >= 400)
+        else
+        {
+            return;
+        }
+    }
+    public void upSniper()
+    {
+        sellUpgradePanel.SetActive(false);
+        sellUpgradePanelOpen = false;
+        Cursor.visible = false;
+        Time.timeScale = 1f;
+
+        if (SniperTower.sniperTowerLevelCnt == 2 && Money.money >= 400)
         {
             SniperTower.sniperTowerLevel = 2;
             SniperTower.sniperTowerLevelCnt += 1;
             Money.money -= 400;
         }
 
+
         else if (SniperTower.sniperTowerLevelCnt == 3 && Money.money >= 1000)
         {
             SniperTower.sniperTowerLevel = 3;
+            SniperTower.sniperTowerLevelCnt += 1;
             Money.money -= 1000;
         }
-        
+        else
+        {
+            return;
+        }
     }
 
+    public void exitMenu()
+    {
+        sellUpgradePanel.SetActive(false);
+        sellUpgradePanelOpen = false;
+        Cursor.visible = false;
+        Time.timeScale = 1f;
+    }
+  
     void Start()
     {
         sellUpgradePanelOpen = false;

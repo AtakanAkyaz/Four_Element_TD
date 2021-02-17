@@ -19,6 +19,7 @@ public class NaviCursor : MonoBehaviour
     private GameObject towerPointObject;
     public Transform cursor;
     public GameObject tower2;
+    public GameObject tower3;
    
     void Start()
     {
@@ -48,6 +49,27 @@ public class NaviCursor : MonoBehaviour
             Money.money -= 200;
             Destroy(towerPointObject);
         }
+        towerAddingPanel.SetActive(false);
+        pMenu = false;
+        Time.timeScale = 1f;
+        Cursor.visible = false;
+    }
+    public void button3Click()
+    {
+        if (Money.money >= 200)
+        {
+            Instantiate(tower3, towerPoint.position, towerPoint.rotation);
+            Money.money -= 200;
+            Destroy(towerPointObject);
+        }
+        towerAddingPanel.SetActive(false);
+        pMenu = false;
+        Time.timeScale = 1f;
+        Cursor.visible = false;
+    }
+
+    public void exitt2()
+    {
         towerAddingPanel.SetActive(false);
         pMenu = false;
         Time.timeScale = 1f;

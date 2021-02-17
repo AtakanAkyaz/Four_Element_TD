@@ -347,4 +347,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   towerHead: {fileID: 0}
   RapidTowerHead: {fileID: 0}
-  SniperTowerCapsule: {fileID: 5324468893926512210}
+  SniperTowerHead: {fileID: 5324468893926512210}
